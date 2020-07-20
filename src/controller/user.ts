@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
-import User from '../models/user';
+import { User}  from '../models/user';
 
-export default class UserRoutes {
+export class UserRoutes {
   constructor() {} 
 
     async getAllUsers(req: Request, res: Response, next: NextFunction) {

@@ -1,5 +1,5 @@
-import express, {Request, Response, NextFunction, Router, Application} from 'express';
-import UserRoutes from '../controller/user';
+import {Application} from 'express';
+import { UserRoutes } from '../controller/user';
 import multer from 'multer';
 
 const storage = multer.diskStorage({
@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-export default class Routes { 
+export class Routes { 
     coursesCtrl = new UserRoutes();
     constructor(app: Application) {
       app.route('/get').get(this.coursesCtrl.getAllUsers);
